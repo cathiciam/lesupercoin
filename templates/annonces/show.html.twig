@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre Annonce
+{% endblock %}
+
+{% block body %}
+	<section class="py-5">
+		<div class="container px-4 px-lg-5 mt-5">
+			<h1>Annonces</h1>
+
+			<div class="card text-center">
+				<div class="card-header">
+					{{annonces.title}}
+				</div>
+				<div class="card-body">
+					<h5 class="card-title">{{annonces.title}}</h5>
+
+					<p class="card-text">
+						ID :
+						{{annonces.id}}<br>
+						Titre :
+						{{ annonces.title }}<br>
+						Prix :
+						{{annonces.prix }}
+						€<br>
+						Description :
+						{{ annonces.content }}<br>
+						Créé le  :
+						{{ annonces.createdAt|date("d/m/Y à H:i:s") }}<br>
+					</p>
+					<a href="{{ path('annonces_home') }}" class="btn btn-primary">Retour à l'accueil</a>
+				</div>
+				<div class="card-footer text-muted">
+					2 days ago
+				</div>
+			</div>
+
+		</div>
+	</section>
+{% endblock %}
